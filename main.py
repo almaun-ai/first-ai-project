@@ -13,3 +13,19 @@ model = LinearRegression()
 model.fit(x,y)
 prediction = model.predict([[10,11]])
 print("prediction=",prediction)
+
+
+
+import pandas as pd
+
+data={"Name":["Mamun","Rahim","Karim","Jamal"],"Marks":[80,45,70,30]}
+
+df=pd.DataFrame(data)
+print(df)
+
+print("Average=",df["Marks"].mean())
+print("Highest=",df["Marks"].max())
+print("Lowest=",df["Marks"].min())
+
+passed=df[df["Marks"]>=50]
+print(passed)
