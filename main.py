@@ -18,7 +18,7 @@ print("prediction=",prediction)
 
 import pandas as pd
 
-data={"Name":["Mamun","Rahim","Karim","Jamal"],"Marks":[90,45,70,30]}
+data={"Name":["Mamun","Rahim","Karim","Jamal"],"Marks":[80,45,70,30]}
 
 df=pd.DataFrame(data)
 print(df)
@@ -40,4 +40,21 @@ plt.title("Student Marks")
 plt.xlabel("Students")
 plt.ylabel("Maerks")
 
+plt.show()
+
+from sklearn.linear_model import LinearRegression
+import matplotlib.pyplot as plt
+import numpy as np
+#House size (square feet)
+x=np.array([[1000],[1500],[2000],[2500],[3000]])
+#House price
+y=np.array([100000,150000,200000,250000,300000])
+model=LinearRegression()
+model.fit(x,y)
+plt.scatter(x,y)
+plt.title("House Price")
+plt.ylabel("Price")
+plt.xlabel("Size")
+price=model.predict([[3500]])
+print("Predicted Price=",price[0])
 plt.show()
