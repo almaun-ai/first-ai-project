@@ -58,3 +58,16 @@ plt.xlabel("Size")
 price=model.predict([[3500]])
 print("Predicted Price=",price[0])
 plt.show()
+
+
+import torch
+x=torch.tensor([1,2,3,4,5])
+print(x)
+
+import torch
+a=torch.tensor([1,2,3])
+b=torch.tensor([4,5,6])
+print(a+b)
+
+
+
