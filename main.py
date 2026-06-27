@@ -83,3 +83,37 @@ import torch
 x=torch.tensor([[5.0]])
 print(model(x))
 
+
+import torch
+import torch.nn as nn
+import torch.optim as optim
+
+#Training Data
+x=torch.tensor([[1.0],[2.0],[3.0],[4.0]])
+y=torch.tensor([[2.0],[4.0],[6.0],[8.0]])
+
+#Model
+model = nn.Sequential(nn.Linear(1,10),nn.ReLU(),nn.Linear(10,1))
+
+#Loss Function
+loss_fn = nn.MSELoss()
+
+#Optimizer
+optimizer = optim.Adam(model.parameters(),lr=0.01)
+
+#Training
+for epoch in range(500):
+    prediction = model(x)
+    loss = loss_fn(prediction,y)
+
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+print("Training Complete!")
+
+#Test
+test = torch.tensor([[5.0]])
+print("Prediction:",model(test).item())
+
+
