@@ -1,3 +1,5 @@
+from torch import nn
+
 print("Hello Github")
 print("My first AI project")
 
@@ -69,5 +71,15 @@ a=torch.tensor([1,2,3])
 b=torch.tensor([4,5,6])
 print(a+b)
 
+import torch
+import torch.nn as nn
 
+#Neural Network তৈরি
+model=nn.Sequential(nn.Linear(1,10),nn.ReLU(),nn.Linear(10,1))
+print(model)
+
+
+import torch
+x=torch.tensor([[5.0]])
+print(model(x))
 
